@@ -57,17 +57,23 @@ form.addEventListener('submit', (e) => {
       const mes = parseInt(partesData[1]); // Converte string do mês para número
       const ano = parseInt(partesData[2]); // Converte string do ano para número
 
+      // Cria objeto Date com a data de aniversário (mes - 1 porque Date usa 0-11 para meses)
       const dataAniversario = new Date(ano, mes - 1, dia);
+      // Cria objeto Date com a data atual
       const hoje = new Date();
 
+      // Calcula idade inicial subtraindo os anos
       let idade = hoje.getFullYear() - dataAniversario.getFullYear();
+      // Calcula diferença entre os meses para ajuste de precisão
       const diferencaMes = hoje.getMonth() - dataAniversario.getMonth();
 
+      // Ajusta a idade se ainda não fez aniversário este ano
+      // Se diferença de mês é negativa OU se é o mesmo mês mas o dia ainda não chegou
       if (
         diferencaMes < 0 ||
         (diferencaMes === 0 && hoje.getDate() < dataAniversario.getDate())
       ) {
-        idade--;
+        idade--; // Diminui 1 ano porque ainda não fez aniversário
       }
 
       if (idade < 18) {
