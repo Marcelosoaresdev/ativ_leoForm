@@ -86,3 +86,9 @@ telefone.addEventListener('input', (e) => {
   e.target.value = valor;
 });
 
+// Máscara para CPF
+cpf.addEventListener('input', (e) => {
+  let valor = e.target.value.replace(/\D/g, '');
+  valor = valor.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, '$1.$2.$3-$4');
+  e.target.value = valor;
+});
