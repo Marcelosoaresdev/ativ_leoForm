@@ -48,10 +48,14 @@ form.addEventListener('submit', (e) => {
   // Validação de idade mínima (18 anos)
   if (birthday.value !== '') {
     const partesData = birthday.value.split('/');
+    // Verifica se a data tem exatamente 3 partes (dia/mês/ano)
+    // Se partesData.length === 3 é verdadeira, significa que temos:
+    // partesData[0] = dia, partesData[1] = mês, partesData[2] = ano
+    // Isso garante que podemos acessar os índices sem erro
     if (partesData.length === 3) {
-      const dia = parseInt(partesData[0]);
-      const mes = parseInt(partesData[1]);
-      const ano = parseInt(partesData[2]);
+      const dia = parseInt(partesData[0]); // Converte string do dia para número
+      const mes = parseInt(partesData[1]); // Converte string do mês para número
+      const ano = parseInt(partesData[2]); // Converte string do ano para número
 
       const dataAniversario = new Date(ano, mes - 1, dia);
       const hoje = new Date();
