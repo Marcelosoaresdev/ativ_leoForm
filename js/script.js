@@ -92,3 +92,17 @@ cpf.addEventListener('input', (e) => {
   valor = valor.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, '$1.$2.$3-$4');
   e.target.value = valor;
 });
+
+birthday.addEventListener('input', (e) => {
+  let valor = e.target.value.replace(/\D/g, '');
+
+  if (valor.length <= 2) {
+    valor = valor.replace(/(\d{0,2})/, '$1');
+  } else if (valor.length <= 4) {
+    valor = valor.replace(/(\d{2})(\d{0,2})/, '$1/$2');
+  } else {
+    valor = valor.replace(/(\d{2})(\d{2})(\d{0,4})/, '$1/$2/$3');
+  }
+
+  e.target.value = valor;
+});
