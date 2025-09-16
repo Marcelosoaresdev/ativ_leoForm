@@ -46,7 +46,7 @@ ativ_leoForm/
 
 1. **Clone o repositório**:```
 
-   git clone https://github.com/Marcelosoaresdev/ativ_leoForm.git├── index.html                          # Formulário HTML
+   git clone[ https://github.com/Marcelosoaresdev/ativ_leoForm.git](https://github.com/Marcelosoaresdev/ativ_leoForm)├── index.html                          # Formulário HTML
 
    ```├── js/
 
